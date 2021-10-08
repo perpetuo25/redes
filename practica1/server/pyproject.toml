@@ -2,7 +2,7 @@
 name = "server-flask"
 version = "0.1.0"
 description = ""
-authors = ["alexhdz1 <alex.hdz.c@ciencias.unam.mx>"]
+authors = ["perpe25 <lince97@ciencias.unam.mx>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
