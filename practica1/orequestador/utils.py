@@ -10,7 +10,7 @@ def get_max_ram(urls):
     ram = urls[0]
     for i in urls:
         if get_ram(i) > get_ram(ram):
-            ram = get_ram(i) 
+            ram = i
     return ram
 
 def get_other_elements(urls, element):
@@ -26,5 +26,4 @@ def select_star(urls):
     sorted_host.append(max_ram)
     sorted_host.extend(get_other_elements(urls, max_ram))
     return sorted_host
-
 

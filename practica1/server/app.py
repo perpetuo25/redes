@@ -1,6 +1,9 @@
 from flask import Flask, jsonify, request
 from utils import suma_peticion
+from uuid import getnode as get_mac
+
 import psutil    
+
 
 app = Flask(__name__)
 
@@ -15,11 +18,14 @@ def suma():
 
 @app.route("/finish", methods= ["GET"])
 def resultado():
-    return jsonify({"name": "compu1"})
+    mac = get_mac()
+    return jsonify({"Data": "PC de Eric ",
+                    "Mac": str(mac)
+    })
 
 @app.route("/getram", methods= ["GET"])
 def ram():
     ram = psutil.virtual_memory().total / 1e+9
     return jsonify({"ram": ram})
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
+    app.run(host='localhost', port=5000)
